@@ -4,7 +4,7 @@ public:
         int n = nums.size();
         int num = k;
         sort(nums.begin(), nums.end());
-        for(int i = 0; i < n; i ++){
+        for(int i = 0; i < n; i ++){ //O(n)
             if(nums[i] == num){
                 i =0;
                 num += k;
