@@ -1,18 +1,18 @@
 class Solution {
 public:
     int maxSubArray(vector<int>& nums) {
-        //kadane's approach
+        int n = nums.size();
         int currsum = 0;
         int maxsum = INT_MIN;
-
-        for(int val : nums){
-            currsum += val;
-            maxsum = max(maxsum, currsum);
+        for(int i = 0; i < n; i ++){
+            currsum += nums[i];
+            maxsum = max(currsum, maxsum);
             if(currsum < 0){
-                currsum =0;
+                
+                currsum = 0;
             }
+          //  maxsum = max(currsum, maxsum);
         }
         return maxsum;
-        
     }
 };
